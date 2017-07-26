@@ -46,3 +46,21 @@ RandomQuestion.Add(question[num]);
  }
  Session["RandomQuestion"] = RandomQuestion;
 Response.Redirect("TestPage");
+output.Text = "Successful";
+}
+else
+{
+output.Text = "Incorrect User Or Pass";
+}
+}
+catch (Exception ex)
+{
+Pass.Text + "'";
+}
+myQuery = "SELECT * FROM test WHERE password = '" +
+output.Text = "Error";
+finally
+{
+}
+myConnection.Close();
+}
