@@ -1,4 +1,3 @@
-
 protected void Button1_Click1(object sender, EventArgs e)
 {
 if (Staff.Checked)// check if checkbox is ticked, if it is then do
@@ -49,9 +48,7 @@ else
  string myQuery = "SELECT * FROM student WHERE username = '" +
  UserBox.Text + "' and password = '" + Pass.Text + "'";// same process as above
  but using the student table instead.
-11
-Felix Si Hin Tuong Application & Web Development Ts348
- myConnection);
+ 
 OleDbCommand myCommand = new OleDbCommand(myQuery,
   try
  {
@@ -62,50 +59,29 @@ OleDbCommand myCommand = new OleDbCommand(myQuery,
  Message.Text = "Successful";
  Response.Redirect("StartTest");// redirect to the start
  test page.
- }
- else
- {
- Message.Text = "Incorrect User Or Pass";// show this
- meassage if incorrect
 }
- }
- catch (Exception ex)
- {
- myQuery = "SELECT * FROM student WHERE name = '" +
- UserBox.Text + "' and password = '" + Pass.Text + "'";// check again
- Message.Text = "Error";
- }
- finally
- }
+else
 {
- }
+Message.Text = "Incorrect User Or Pass";// show this
+meassage if incorrect
+}
+}
+catch (Exception ex)
+{
+myQuery = "SELECT * FROM student WHERE name = '" +
+UserBox.Text + "' and password = '" + Pass.Text + "'";// check again
+Message.Text = "Error";
+}
+finally
+}
+{
+}
 myConnection.Close();// close connection
-   }
+}
  protected void Register_Click(object sender, EventArgs e)
  {
  Response.Redirect("Register");// goes to the register page;
  }
- }
 }
- 12
-Felix Si Hin Tuong
-Application & Web Development
-Ts348
-Register page code
-  protected void Register_Click(object sender, EventArgs e)
- {
-string N = Name.Text; string U = User.Text; string P = Pass.Text;
-string E = Email.Text;
-// assign the textboxes into variables
-if (Name.Text =="" || Pass.Text =="" || Pass.Text == "" ||
-Email.Text == ""){// check if either the textboxs are blank.
-Output.Text = ("try again");
 }
-else
-{
-DB.Register(N,E,U,P);// calls the register methods
-Response.Redirect("Login");// redirect to the Login page with
-sucesssful
-}
- }
-} }
+ 
